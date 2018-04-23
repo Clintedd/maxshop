@@ -1,0 +1,28 @@
+$primary: #333;
+$secondary: #fff;
+$lightgrey: #888;
+$hintgrey : #aaa;
+$whitegrey: #eee;
+$darkgrey: #444;
+$midgrey: #555;
+$grey: #666;
+$gold: #d4bd52;
+
+@mixin fontM($sizeValue, $fontWeight) {
+    font-family: 'Montserrat';
+    font-size: $sizeValue * 1px;
+    font-size: ($sizeValue/10) * 1rem;
+    font-weight: $fontWeight;
+}
+
+@mixin fontR($sizeValue, $fontWeight) {
+    font-family: 'Roboto';
+    font-size: $sizeValue * 1px;
+    font-size: ($sizeValue/10) * 1rem;
+    font-weight: $fontWeight;
+}
+
+@mixin colors($background, $color) {
+    background: $background;
+    color: $color;
+}

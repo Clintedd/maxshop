@@ -1,0 +1,103 @@
+.footer-img {
+    display: flex;
+
+    &__item {
+        width: 50%;
+        height: 478px;
+    }
+
+    &__item h3 {
+        @include fontM(30, 700)
+    }
+
+    &__item h5 {
+        @include fontR(18, 400)
+    }
+
+    &__item a {
+        width: 175px;
+        @include fontM(16, 400)
+        border-radius: 50px;
+    }
+
+    &__item:nth-of-type(1) {
+        background-image: url(../../images/footer-1.png);
+        color: $secondary;
+
+    }
+
+    &__item:nth-of-type(1) a {
+        border: 1px solid white;
+        padding: 20px 30px;
+        color: $secondary;
+    }
+
+    &__item:nth-of-type(2) {
+        background-image: url(../../images/footer-2.png)
+    }
+
+    &__item:nth-of-type(2) a {
+        border: 1px solid $gold;
+        padding: 20px 45px;
+        color: $primary;
+    }
+}
+
+.footer-info {
+    width: 100%;
+    background: $darkgrey;
+    height: 450px;
+}
+
+.footer-nav {
+    width: 100%;
+    background: $darkgrey;
+    height: 150px;
+
+    &__title {
+        text-transform: uppercase;
+        color: $gold;
+        @include fontM(16, 400)
+        text-align: center;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        width: 40%;
+        margin: 0 auto;
+        list-style: none;
+
+        &-item:hover a {
+            border: 1px solid $gold;
+            border-radius: 50px;
+            color: $gold;
+            padding: 11px 20px;
+        }
+
+        &-item a {
+            @include fontR(16, 400)
+            color: $secondary;
+        }
+    }
+
+
+}
+
+.footer-copyright {
+    background-color: $midgrey;
+
+    & h6 {
+        @include fontR(16, 400)
+        color: $secondary;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+
+        &-item a {
+            @include fontR(16, 400)
+        }
+    }
+}

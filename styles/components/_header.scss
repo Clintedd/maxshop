@@ -1,0 +1,33 @@
+.top-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    &__img {
+
+    }
+
+    &__list {
+        list-style: none;
+        display: flex;
+
+
+        &-item a {
+            text-decoration: none;
+            font-family: 'Montserrat';
+            color: $lightgrey;
+            padding-right: 42px;
+        }
+
+        &-item:hover a {
+            color: $primary;
+        }
+        
+    }
+}
+
+.main-img {
+    background-image: url(../images/main-image-1.png);
+    background-repeat: no-repeat;
+    background-position: right;
+}
