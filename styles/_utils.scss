@@ -8,6 +8,25 @@ $midgrey: #555;
 $grey: #666;
 $gold: #d4bd52;
 
+a {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin wrapperO() {
+    width: 1920px;
+    margin: 0 auto;
+}
+
+@mixin wrapperI() {
+    width: 1200px;
+    margin: 0 auto;
+}
+
 @mixin fontM($sizeValue, $fontWeight) {
     font-family: 'Montserrat';
     font-size: $sizeValue * 1px;

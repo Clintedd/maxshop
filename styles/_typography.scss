@@ -1,17 +1,6 @@
-h1 {
-    @include fontM(500, 400)
-    color: rgba(170, 170, 170, 0.219608);
+html {
+    font-size: 62.5%;
 }
 
-.main-img h3 {
-    @include fontR(28, 400)
-}
 
-.main-img h2 {
-    @include fontM(80, 700)
-}
-
-h3.section-title {
-    @include fontM(30, 400)
-}
 

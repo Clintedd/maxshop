@@ -4,23 +4,26 @@
     align-items: center;
     
     &__img {
-
+        padding: 66px 0;
     }
 
     &__list {
         list-style: none;
         display: flex;
 
+        &-item {
+            padding-right: 42px;
+        }
 
         &-item a {
             text-decoration: none;
-            font-family: 'Montserrat';
+            @include fontM(22, 400);
             color: $lightgrey;
-            padding-right: 42px;
         }
 
         &-item:hover a {
             color: $primary;
+            border-bottom: 2px solid $gold;
         }
         
     }
@@ -29,5 +32,46 @@
 .main-img {
     background-image: url(../images/main-image-1.png);
     background-repeat: no-repeat;
-    background-position: right;
+    background-position: right top;
+    padding-left: 260px;
+
+    &__h3 {
+
+        &--first {
+            @include fontM(30, 400);
+            padding-bottom: 152px;
+            color: $primary;
+        }
+
+        &--second {
+            @include fontR(28, 400);
+            padding-bottom: 37px;
+            color: $hintgrey;
+        }
+    }
+
+    &__h2 {
+        @include fontM(80, 700);
+    }
+
+    &__div {
+        position: relative;
+
+        &__h1 {
+            @include fontM(500, 400)
+            color: rgba(170, 170, 170, 0.219608);
+        }
+
+        &__a {
+            @include fontM(18, 400)
+            background-color: $gold;
+            color: $secondary;
+            padding: 22px 42px;
+            border-radius: 50px;
+            position: absolute;
+            top: 35%;
+        }
+
+    }
+
 }

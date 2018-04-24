@@ -21,7 +21,7 @@
     }
 
     &__item:nth-of-type(1) {
-        background-image: url(../../images/footer-1.png);
+        background-image: url(../images/footer-1.png);
         color: $secondary;
 
     }
@@ -33,7 +33,7 @@
     }
 
     &__item:nth-of-type(2) {
-        background-image: url(../../images/footer-2.png)
+        background-image: url(../images/footer-2.png)
     }
 
     &__item:nth-of-type(2) a {
@@ -47,6 +47,22 @@
     width: 100%;
     background: $darkgrey;
     height: 450px;
+
+    &__section {
+        @include wrapperI();
+        display: flex;
+
+        &-item {
+            flex: 1 0 auto;
+        }
+
+        &-item h6:first-child {
+            @include fontM(16, 400)
+            color: $gold;
+        }
+    }
+
+
 }
 
 .footer-nav {

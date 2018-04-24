@@ -4,17 +4,8 @@
 @import "components/header";
 @import "components/footer";
 
-html {
-    font-size: 62.5%;
-}
-
-a {
-    text-decoration: none;
-}
-
-ul {
+h1, h2, h3, h4, h5, h6, a, p {
     margin: 0;
-    padding: 0;
 }
 
 .outer-wrapper {
@@ -35,11 +26,40 @@ ul {
         height: 558px;
         background-repeat: no-repeat;
         background-position: center;
+        position: relative;
 
-        & h3 {
-            @include fontM(28, 700)
+        & h6 {
+            @include fontR(16, 400);
+            color: $primary;
+            transform: rotate(-90deg);
+            position: absolute;
+            top: 30%;
+        }
+
+        & img {
+            // 
+        }
+
+        &-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-text h3 {
+            @include fontM(28, 700);
             background: $secondary;
             display: inline-block;
+            padding: 10px 20px;
+            position: absolute;
+            left: 25px;
+        }
+
+        &-text h3:first-child {
+            bottom: 22%;
+        }
+
+        &-text h3:last-child {
+            bottom: 11%;
         }
     }
 
@@ -54,9 +74,51 @@ ul {
     }
 }
 
+.product-header {
+
+    &__h3 {
+        @include fontM(30, 400);
+        padding: 158px 0 0;
+    }
+
+    &__div {
+        display: flex;
+        justify-content: space-between;
+
+        & h5 {
+            @include fontR(18, 400);
+            padding: 19px 0 60px;
+        }
+
+        &__div {
+            display: flex;
+
+            &__h5:first-child {
+                color: $primary;
+            }
+
+            &__h5:nth-of-type(2) {
+                color: $hintgrey;
+            }
+        }
+
+    }
+}
+
 .top-product {
     display: flex;
     justify-content: space-between;
+
+    &__item {
+        
+    }
+}
+
+.lookbook {
+    background-image: url(../images/main-image-2.png);
+    background-repeat: no-repeat;
+
+    &__item {}
 }
 
 .onsale-product {
