@@ -112,6 +112,10 @@ h1, h2, h3, h4, h5, h6, a, p {
     &__item {
         position: relative;
 
+        &__h6 {
+            line-height: 24px;
+        }
+
         &__h6--top {
             @include fontR(16, 400);
             color: $midgrey;
@@ -128,6 +132,14 @@ h1, h2, h3, h4, h5, h6, a, p {
 
         & h5 {
             @include fontM(18, 400);
+            color: $primary;
+            line-height: 30px;
+        }
+
+        & p {
+            @include fontM(15, 400);
+            color: $hintgrey;
+            text-decoration: line-through;
         }
     }
 }
@@ -136,21 +148,31 @@ h1, h2, h3, h4, h5, h6, a, p {
     background-color: $primary;
     display: inline-block;
     position: absolute;
-    bottom: 9%;
+    bottom: 17%;
     left: 84.5%;
 }
-
-
 
 .bag-parent img {
     padding: 8px 11px;
 }
 
+.four-image__item:hover .bag-parent {
+    background-color: $gold;
+}
+
 .lookbook {
     background-image: url(../images/main-image-2.png);
     background-repeat: no-repeat;
+    margin-top: 162px;
+    display: flex;
 
-    &__item {}
+    &__item {
+
+        &--white-border {
+            background-image: url(../images/white-border.svg);
+            padding-left: 432px;
+        }
+    }
 }
 
 .onsale-product {
