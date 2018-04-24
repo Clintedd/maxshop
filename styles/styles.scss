@@ -105,13 +105,45 @@ h1, h2, h3, h4, h5, h6, a, p {
     }
 }
 
-.top-product {
+.four-image {
     display: flex;
     justify-content: space-between;
 
     &__item {
-        
+        position: relative;
+
+        &__h6--top {
+            @include fontR(16, 400);
+            color: $midgrey;
+        }
+
+        &__h6--bottom {
+            @include fontR(16, 300);
+            color: $hintgrey;
+        }
+
+        &__div > * {
+            display: inline;
+        }
+
+        & h5 {
+            @include fontM(18, 400);
+        }
     }
+}
+
+.bag-parent {
+    background-color: $primary;
+    display: inline-block;
+    position: absolute;
+    bottom: 9%;
+    left: 84.5%;
+}
+
+
+
+.bag-parent img {
+    padding: 8px 11px;
 }
 
 .lookbook {
@@ -124,4 +156,10 @@ h1, h2, h3, h4, h5, h6, a, p {
 .onsale-product {
     display: flex;
     justify-content: space-between;
+
+    &__item {
+        position: relative;
+
+        
+    }
 }
