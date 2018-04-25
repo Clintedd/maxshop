@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
     
     &__img {
         padding: 66px 0;
@@ -10,6 +11,8 @@
     &__list {
         list-style: none;
         display: flex;
+        padding-left: 225px;
+        justify-content: space-between;
 
         &-item {
             padding-right: 42px;
@@ -19,13 +22,27 @@
             text-decoration: none;
             @include fontM(22, 400);
             color: $lightgrey;
+            padding-bottom: 25px;
         }
 
         &-item:hover a {
             color: $primary;
             border-bottom: 2px solid $gold;
+        } 
+    }
+
+    &__div {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        & a {
+            @include fontR(16, 400)
+            padding: 0 7px;
+            color: lightgrey;
         }
-        
+        & img {
+            padding: 0 7px;
+        }
     }
 }
 
@@ -74,4 +91,49 @@
 
     }
 
+}
+
+@media (max-width: 1910px) {
+    .main-img__div__h1 {
+        color: $secondary;
+    }
+}
+
+@media (max-width: 1200px) {
+    .top-nav {
+        
+        &__img {
+            display: none;
+        }
+
+        &__list {
+            padding: 50px 0;
+        }
+    }
+
+    .main-img {
+        text-align: center;
+        padding-left: 0;
+
+        &__h3--first {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        &__h3--second {
+            color: $secondary;
+        }
+
+        &__h2 {
+            
+        }
+
+        &__div {
+
+            &__a {
+                top: 57%;
+                right: 78%;
+            }
+        }
+    }
 }

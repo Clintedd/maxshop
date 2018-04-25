@@ -9,6 +9,10 @@ h1, h2, h3, h4, h5, h6, a, p {
     margin: 0;
 }
 
+img {
+    max-width: 100%;
+}
+
 .outer-wrapper {
     max-width: 1920px;
     width: 100%;
@@ -37,12 +41,6 @@ h1, h2, h3, h4, h5, h6, a, p {
             transform: rotate(-90deg);
             position: absolute;
             top: 30%;
-        }
-
-        & img {
-            position: absolute;
-            left: 20%;
-            top: 5%;
         }
 
         &-text {
@@ -82,6 +80,17 @@ h1, h2, h3, h4, h5, h6, a, p {
 
 }
 
+@media (max-width: 1100px) {
+    .top-section {
+        flex-direction: column;
+
+        &__img {
+            width: 100%;
+            margin-bottom: 100px;
+        }
+    }
+}
+
 .product-header {
 
     &__h3 {
@@ -113,6 +122,15 @@ h1, h2, h3, h4, h5, h6, a, p {
     }
 }
 
+@media (max-width: 600px) {
+    .product-header {
+        &__div {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+}
+
 .top-product {
     position: relative;
 }
@@ -134,6 +152,7 @@ h1, h2, h3, h4, h5, h6, a, p {
 
     &__item {
         position: relative;
+        margin: 0 auto;
 
         &__h6 {
             line-height: 24px;
@@ -173,6 +192,15 @@ h1, h2, h3, h4, h5, h6, a, p {
         display: none;
     }
 }
+
+@media (max-width: 600px) {
+    .four-image {
+
+        &__item {
+        }
+    }
+}
+
 
 .onsale-product {
     position: relative;
@@ -282,6 +310,40 @@ h1, h2, h3, h4, h5, h6, a, p {
     }
 }
 
+@media (max-width: 1200px) {
+    .lookbook {
+
+        &__button {
+            padding-top: 450px;
+        }
+
+        &__white-border {
+
+            & p {
+                transform: none;
+                bottom: 25%
+            }
+
+            & a {
+                background-color: $gold;
+                color: $secondary;
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .lookbook {
+        &__white-border {
+            text-align: center;
+            color: $secondary; 
+            & h5 {
+                color: $secondary;
+            }
+        }
+    }
+}
+
 .blog {
     padding-bottom: 162px;
 
@@ -359,6 +421,24 @@ h1, h2, h3, h4, h5, h6, a, p {
 }
 
 @media (max-width: 1200px) {
+    .blog {
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+
+            &__item3 {
+                padding-top: 100px;
+            }
+
+            &__item4 {
+                text-align: center;
+                padding-top: 20px;
+            }
+        }
+    }
+
     .outer-wrapper {
         max-width: 1920px;
         width: 90%;

@@ -65,6 +65,15 @@
                 color: $secondary;
             }
 
+            &--contact h6:nth-of-type(2) {
+                line-height: 25px;
+                padding-bottom: 49px;
+            }
+
+            &--contact h6:nth-of-type(2) ~ h6 {
+                padding-bottom: 20px;
+            }
+
             &--tags a {
                 @include fontR(14, 400);
                 color: $secondary;
@@ -72,6 +81,32 @@
                 padding: 13px 15px;
                 margin: 8px 3px;
                 display: inline-block;
+            }
+
+            &--newsletter {
+
+                & h6:nth-of-type(2) {
+                    color: $secondary;
+                    @include fontR(16, 400);
+                    padding-bottom: 35px;
+                }
+
+                & input[type="email"] {
+                    @include fontR(16, 400);
+                    padding: 14px 14px;
+                    background-color: $darkgrey;
+                    color: $secondary;
+
+                }
+
+                & input[type="submit"] {
+                    background-color: $darkgrey;
+                    @include fontR(16, 400);
+                    padding: 14px 9px;
+                    color: $gold;
+                    border: 1px solid $gold;
+                }
+
             }
         }
 
@@ -101,10 +136,10 @@
 
     &__list {
         display: flex;
-        justify-content: space-between;
-        width: 40%;
+        justify-content: center;
         margin: 0 auto;
         list-style: none;
+        flex-wrap: wrap;
 
         &-item:hover {
         }
@@ -143,8 +178,13 @@
 
         &-item a {
             @include fontR(16, 400)
-            padding-right: 20px;
+            padding: 0 20px;
             color: $secondary;
+            border-right: 1px solid $lightgrey;
+        }
+
+        &-item a:last-child {
+            border:none;
         }
     }
 }
@@ -157,6 +197,45 @@
         }
         &__item:nth-of-type(2) {
             padding-left: 100px;
+        }
+    }
+
+    .footer-info {
+
+        &__section-item h6:first-child {
+            text-align: center;
+            
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .footer-img {
+        flex-direction: column;
+
+        &__item {
+            width: 100%;
+            text-align: center;
+            padding-right: 100px;
+        }
+    }
+
+    .footer-info {
+
+        &__section {
+            flex-direction: column;
+            text-align: center;
+
+            &-item {
+                width: 100%
+            }
+        }
+    }
+
+    .footer-copyright {
+        &__list {
+            flex-direction: column;
+            text-align: center;
         }
     }
 }
