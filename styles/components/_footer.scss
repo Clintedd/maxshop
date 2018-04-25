@@ -3,42 +3,47 @@
 
     &__item {
         width: 50%;
+        padding-top: 171px;
         height: 478px;
     }
 
     &__item h3 {
         @include fontM(30, 700)
+        padding-bottom: 15px;
     }
 
     &__item h5 {
         @include fontR(18, 400)
+        padding-bottom: 47px;
     }
 
     &__item a {
-        width: 175px;
         @include fontM(16, 400)
         border-radius: 50px;
+        display: inline-block;
+        padding: 20px 45px;
+
     }
 
     &__item:nth-of-type(1) {
         background-image: url(../images/footer-1.png);
         color: $secondary;
+        padding-left: 328px;
 
     }
 
     &__item:nth-of-type(1) a {
         border: 1px solid white;
-        padding: 20px 30px;
         color: $secondary;
     }
 
     &__item:nth-of-type(2) {
-        background-image: url(../images/footer-2.png)
+        background-image: url(../images/footer-2.png);
+        padding-left: 434px;
     }
 
     &__item:nth-of-type(2) a {
         border: 1px solid $gold;
-        padding: 20px 45px;
         color: $primary;
     }
 }
@@ -46,19 +51,37 @@
 .footer-info {
     width: 100%;
     background: $darkgrey;
-    height: 450px;
+
 
     &__section {
         @include wrapperI();
         display: flex;
+        justify-content: space-between;
 
         &-item {
-            flex: 1 0 auto;
+            width: 25%;
+
+            &--contact h6:first-child ~ h6{
+                @include fontR(16, 400);
+                color: $secondary;
+            }
+
+            &--tags a {
+                @include fontR(14, 400);
+                color: $secondary;
+                border: 1px solid $secondary;
+                padding: 13px 15px;
+                margin: 8px 3px;
+                display: inline-block;
+            }
         }
 
         &-item h6:first-child {
             @include fontM(16, 400)
             color: $gold;
+            padding: 122px 0 60px;
+            text-transform: uppercase;
+
         }
     }
 
@@ -68,13 +91,13 @@
 .footer-nav {
     width: 100%;
     background: $darkgrey;
-    height: 150px;
 
     &__title {
         text-transform: uppercase;
         color: $gold;
         @include fontM(16, 400)
         text-align: center;
+        padding: 86px 0 59px;
     }
 
     &__list {
@@ -84,16 +107,22 @@
         margin: 0 auto;
         list-style: none;
 
+        &-item:hover {
+        }
+
         &-item:hover a {
             border: 1px solid $gold;
-            border-radius: 50px;
             color: $gold;
-            padding: 11px 20px;
+            border-radius: 50px;
         }
 
         &-item a {
             @include fontR(16, 400)
             color: $secondary;
+            padding: 10px 20px;
+            line-height: 30px;
+            margin-bottom: 80px;
+            display: inline-block;
         }
     }
 
@@ -111,9 +140,13 @@
     &__list {
         display: flex;
         justify-content: space-between;
+        @include wrapperI();
+        padding: 41px 0;
 
         &-item a {
             @include fontR(16, 400)
+            padding-right: 20px;
+            color: $secondary;
         }
     }
 }

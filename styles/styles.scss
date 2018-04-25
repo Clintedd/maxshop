@@ -1,6 +1,7 @@
 @import "setup";
 @import "utils";
 @import "typography";
+@import "responsive";
 @import "components/header";
 @import "components/footer";
 
@@ -22,10 +23,8 @@ h1, h2, h3, h4, h5, h6, a, p {
     display: flex;
 
     &__img {
-        width: 33.33%;
+        width: calc(33.33% - 20px);
         height: 558px;
-        background-repeat: no-repeat;
-        background-position: center;
         position: relative;
 
         & h6 {
@@ -36,9 +35,11 @@ h1, h2, h3, h4, h5, h6, a, p {
             top: 30%;
         }
 
-        & img {
-            // 
-        }
+        // & img {
+        //     position: absolute;
+        //     left: 20%;
+        //     top: 5%;
+        // }
 
         &-text {
             display: flex;
@@ -61,16 +62,6 @@ h1, h2, h3, h4, h5, h6, a, p {
         &-text h3:last-child {
             bottom: 11%;
         }
-    }
-
-    &__img:nth-of-type(1) {
-        background-image: url(../images/image-1.png);
-    }
-    &__img:nth-of-type(2) {
-        background-image: url(../images/image-2.png);
-    }
-    &__img:nth-of-type(3) {
-        background-image: url(../images/image-3.png);
     }
 }
 
@@ -106,22 +97,238 @@ h1, h2, h3, h4, h5, h6, a, p {
 }
 
 .top-product {
+    position: relative;
+}
+
+.top-product::after {
+    content: 'Spring/Summer';
+    position: absolute;
+    font-size: 8.6rem;
+    transform: rotate(90deg);
+    left: 95%;
+    top: 25%;
+    color: $whitegrey;
+}
+
+.four-image {
     display: flex;
     justify-content: space-between;
 
     &__item {
-        
+        position: relative;
+
+        &__h6 {
+            line-height: 24px;
+        }
+
+        &__h6--top {
+            @include fontR(16, 400);
+            color: $midgrey;
+        }
+
+        &__h6--bottom {
+            @include fontR(16, 300);
+            color: $hintgrey;
+        }
+
+        &__div > * {
+            display: inline;
+        }
+
+        & h5 {
+            @include fontM(18, 400);
+            color: $primary;
+            line-height: 30px;
+        }
+
+        & p {
+            @include fontM(15, 400);
+            color: $hintgrey;
+            text-decoration: line-through;
+        }
     }
+}
+
+.onsale-product {
+    position: relative;
+}
+
+.onsale-product::before {
+    content: 'Summer Sale';
+    position: absolute;
+    font-size: 8.6rem;
+    transform: rotate(90deg);
+    right: 98%;
+    top: 25%;
+    color: $whitegrey;
+    width: 570px;
+}
+
+.bag-parent {
+    background-color: $primary;
+    display: inline-block;
+    position: absolute;
+    bottom: 17%;
+    left: 84.5%;
+}
+
+.bag-parent img {
+    padding: 8px 11px;
+}
+
+.four-image__item:hover .bag-parent {
+    background-color: $gold;
 }
 
 .lookbook {
     background-image: url(../images/main-image-2.png);
     background-repeat: no-repeat;
-
-    &__item {}
-}
-
-.onsale-product {
+    margin-top: 162px;
     display: flex;
     justify-content: space-between;
+    position: relative;
+
+    &__button {
+        display: flex;
+        margin-left: 50px;
+        padding: 240px 0 252px;
+
+        &__arrow {
+            background-color: $darkgrey;
+            padding: 5px 0;
+            color: $secondary;
+            
+            &--left {
+                padding: 0 20px 0 40px;
+            }
+
+            &--right {
+                padding: 0 40px 0 20px;
+            }
+
+            & i {
+                font-size: 40px;
+                line-height: 70px;
+            }
+
+            
+        }
+    }
+
+    &__white-border {
+        padding: 111px 0;
+        text-align: right;
+
+        & img {
+            position: absolute;
+            left: 22.3%;
+        }
+
+        & h3 {
+            @include fontM(30, 400);
+            line-height: 42px;
+        }
+
+        & h5 {
+            @include fontR(18, 400);
+            color: $hintgrey;
+            padding-top: 14px;
+        }
+
+        & p {
+            @include fontR(15, 400);
+            text-transform: uppercase;
+            position: absolute;
+            color: $darkgrey;
+            transform: rotate(-90deg);
+            bottom: 11%;
+            right: 25%;
+        }
+
+        & a {
+            @include fontM(16, 400);
+            border: 1px solid $gold;
+            padding: 21px 34px;
+            border-radius: 50px;
+            color: $primary;
+            display: inline-block;
+            margin-top: 40px;
+        }
+    }
+}
+
+.blog {
+    padding-bottom: 162px;
+
+    &__subheader {
+        @include fontM(30, 400);
+        padding: 158px 0 60px;
+    }
+
+    &__container {
+        display: grid;
+        grid-template-columns: 3fr 1fr 3fr;
+        grid-template-rows: 3fr 1fr 3fr;
+
+        &__item {
+
+            & p:first-child {
+                @include fontM(12, 400);
+                text-transform: uppercase;
+                padding-bottom: 33px;
+                color: $hintgrey;
+            }
+
+            & h4 {
+                @include fontM(20, 400);
+                padding-bottom: 10px;
+            }
+
+            & p:nth-of-type(2) {
+                @include fontR(14, 400);
+                color: $hintgrey;
+                padding-bottom: 15px;
+            }
+
+            & p:last-child {
+                @include fontR(15.38, 400);
+                line-height: 28px;
+            }
+        }
+
+        &__item1 {
+            grid-column-start: 1;
+            grid-column-end: span 2; 
+            grid-row-start: 1;
+            grid-row-end: span 2;
+            z-index: 5;
+            padding: 70px 145px 0 100px;
+        }
+
+        &__item2 {
+            grid-column-start: 2;
+            grid-column-end: span 2;
+            grid-row-start: 1;
+            grid-row-end: span 2;
+            z-index: 4;
+        }
+
+        &__item3 {
+            grid-column-start: 1;
+            grid-column-end: span 2;
+            grid-row-start: 2;
+            grid-row-end: span 2;
+            z-index: 1;
+        }
+
+        &__item4 {
+            grid-column-start: 2;
+            grid-column-end: span 2;
+            grid-row-start: 2;
+            grid-row-end: span 2;
+            z-index: 3;
+            text-align: right;
+            padding: 140px 150px 0 110px;
+        }
+    }
 }
