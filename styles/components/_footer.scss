@@ -54,7 +54,6 @@
 
 
     &__section {
-        @include wrapperI();
         display: flex;
         justify-content: space-between;
 
@@ -140,13 +139,24 @@
     &__list {
         display: flex;
         justify-content: space-between;
-        @include wrapperI();
         padding: 41px 0;
 
         &-item a {
             @include fontR(16, 400)
             padding-right: 20px;
             color: $secondary;
+        }
+    }
+}
+
+@media (max-width: 1300px) {
+    .footer-img {
+        
+        &__item:nth-of-type(1) {
+            padding-left: 100px;
+        }
+        &__item:nth-of-type(2) {
+            padding-left: 100px;
         }
     }
 }

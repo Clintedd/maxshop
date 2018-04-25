@@ -11,11 +11,13 @@ h1, h2, h3, h4, h5, h6, a, p {
 
 .outer-wrapper {
     max-width: 1920px;
+    width: 100%;
     margin: 0 auto;
 }
 
 .inner-wrapper {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -23,9 +25,11 @@ h1, h2, h3, h4, h5, h6, a, p {
     display: flex;
 
     &__img {
-        width: calc(33.33% - 20px);
+        width: 33.33%;
         height: 558px;
         position: relative;
+        background-repeat: no-repeat;
+        background-position: center;
 
         & h6 {
             @include fontR(16, 400);
@@ -35,11 +39,11 @@ h1, h2, h3, h4, h5, h6, a, p {
             top: 30%;
         }
 
-        // & img {
-        //     position: absolute;
-        //     left: 20%;
-        //     top: 5%;
-        // }
+        & img {
+            position: absolute;
+            left: 20%;
+            top: 5%;
+        }
 
         &-text {
             display: flex;
@@ -63,6 +67,19 @@ h1, h2, h3, h4, h5, h6, a, p {
             bottom: 11%;
         }
     }
+
+    &__img:nth-of-type(1) {
+        background-image: url(../images/image-1.png)
+    }
+
+    &__img:nth-of-type(2) {
+        background-image: url(../images/image-2.png)
+    }
+
+    &__img:nth-of-type(3) {
+        background-image: url(../images/image-3.png)
+    }
+
 }
 
 .product-header {
@@ -113,6 +130,7 @@ h1, h2, h3, h4, h5, h6, a, p {
 .four-image {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     &__item {
         position: relative;
@@ -146,6 +164,13 @@ h1, h2, h3, h4, h5, h6, a, p {
             color: $hintgrey;
             text-decoration: line-through;
         }
+    }
+}
+
+@media (max-width: 1400px) {
+    .top-product::after,
+    .onsale-product::before {
+        display: none;
     }
 }
 
@@ -331,4 +356,20 @@ h1, h2, h3, h4, h5, h6, a, p {
             padding: 140px 150px 0 110px;
         }
     }
+}
+
+@media (max-width: 1200px) {
+    .outer-wrapper {
+        max-width: 1920px;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .inner-wrapper {
+        max-width: 1200px;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+
 }
